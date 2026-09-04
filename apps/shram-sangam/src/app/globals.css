@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #17231f;
+  background: #f7f5ee;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f7f5ee; }
+button, input { font: inherit; }
+
+@layer components {
+  .panel { @apply rounded-2xl border border-black/5 bg-white shadow-soft; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.18em] text-moss; }
+  .mode-button { @apply flex min-w-[120px] items-center gap-2 rounded-xl px-3 py-2 text-left text-sm font-semibold transition; }
+  .mode-button-active { @apply bg-ink text-white shadow-lg; }
+  .mode-button-idle { @apply text-slate-500 hover:bg-leaf hover:text-ink; }
+}

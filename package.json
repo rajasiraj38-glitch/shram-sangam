@@ -9,7 +9,9 @@
     "services/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --parallel",
+    "dev": "npm run app:dev",
+    "app:dev": "npm run dev --workspace=@shram-sangam/app",
+    "dev:legacy": "turbo run dev --parallel",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
