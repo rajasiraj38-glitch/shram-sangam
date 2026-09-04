@@ -1,0 +1,39 @@
+{
+  "name": "shram-sangam",
+  "version": "1.0.0",
+  "description": "Shram Sangam — Cooperative Gig Services Platform for Household & Community Services",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+
+    "db:migrate": "node packages/database/scripts/migrate.js",
+    "db:seed":    "node packages/database/scripts/seed.js",
+    "db:reset":   "node packages/database/scripts/reset.js",
+
+    "infra:up":   "docker compose up -d postgres redis",
+    "infra:down": "docker compose down",
+    "infra:full": "docker compose up -d",
+
+    "setup": "npm install && npm run infra:up && sleep 3 && npm run db:migrate && npm run db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "prettier": "^3.2.0",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.8.2"
+}
