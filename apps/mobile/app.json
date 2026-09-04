@@ -14,6 +14,12 @@
     },
     "ios": {
       "bundleIdentifier": "com.shramsangam.app"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d2a6fd8f-682a-4693-8708-1fb5425e2410"
+      }
+    },
+    "owner": "rajasiraj28"
   }
 }
