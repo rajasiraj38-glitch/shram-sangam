@@ -1,0 +1,17 @@
+{
+  "name": "@shram-sangam/database",
+  "version": "1.0.0",
+  "description": "Database migrations, RLS policies, and seed data for Shram Sangam",
+  "scripts": {
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "reset": "node scripts/reset.js"
+  },
+  "dependencies": {
+    "pg": "^8.11.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.0"
+  }
+}

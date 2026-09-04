@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap");
+
+@layer base {
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  :root {
+    --brand-orange: #f97316;
+    --brand-teal: #14b8a6;
+    --brand-earth: #84cc16;
+  }
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  @apply rounded-2xl z-0;
+}
