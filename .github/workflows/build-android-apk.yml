@@ -1,0 +1,59 @@
+name: Build Shram Sangam Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*-mobile'
+
+permissions:
+  contents: write
+
+env:
+  APP_DIR: apps/mobile
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Install EAS CLI
+        run: npm install --global eas-cli@latest
+
+      - name: Build APK with EAS
+        working-directory: ${{ env.APP_DIR }}
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: eas build --platform android --profile preview --non-interactive --wait --json > eas-build.json
+
+      - name: Download APK
+        working-directory: ${{ env.APP_DIR }}
+        run: |
+          APK_URL=$(node -e "const fs=require('fs'); const raw=fs.readFileSync('eas-build.json','utf8'); const data=JSON.parse(raw); const build=Array.isArray(data) ? data[0] : data; const url=build?.artifacts?.buildUrl || build?.artifacts?.applicationArchiveUrl; if (!url) process.exit(1); process.stdout.write(url)")
+          curl --fail --location "$APK_URL" --output shram-sangam-android.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shram-sangam-android-apk
+          path: apps/mobile/shram-sangam-android.apk
+          if-no-files-found: error
+
+      - name: Attach APK to GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: apps/mobile/shram-sangam-android.apk
+          name: Shram Sangam Mobile ${{ github.ref_name }}
+          generate_release_notes: true
