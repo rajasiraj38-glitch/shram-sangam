@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -48,6 +48,12 @@ export default function ShramSangamApp() {
   const [booked, setBooked] = useState<string | null>(null);
   const [online, setOnline] = useState(true);
   const [voted, setVoted] = useState<Record<number, 'yes' | 'no'>>({});
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/sw.js`).catch(() => undefined);
+    }
+  }, []);
 
   const visibleServices = useMemo(
     () => services.filter((service) => `${service.title} ${service.category}`.toLowerCase().includes(query.toLowerCase())),

@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Shram Sangam",
+    "slug": "shram-sangam",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "shramsangam",
+    "android": {
+      "package": "com.shramsangam.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#17231f"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.shramsangam.app"
+    }
+  }
+}

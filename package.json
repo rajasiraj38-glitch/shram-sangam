@@ -9,8 +9,10 @@
     "services/*"
   ],
   "scripts": {
-    "dev": "npm run app:dev",
+    "dev": "npm run mobile",
     "app:dev": "npm run dev --workspace=@shram-sangam/app",
+    "web:dev": "npm run app:dev",
+    "mobile": "npm run start --workspace=@shram-sangam/mobile",
     "dev:legacy": "turbo run dev --parallel",
     "build": "turbo run build",
     "lint": "turbo run lint",

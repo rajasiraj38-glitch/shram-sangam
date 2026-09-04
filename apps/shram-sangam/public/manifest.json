@@ -1,0 +1,14 @@
+{
+  "name": "Shram Sangam",
+  "short_name": "Shram Sangam",
+  "description": "A cooperative marketplace for household and community services.",
+  "start_url": "/shram-sangam/",
+  "scope": "/shram-sangam/",
+  "display": "standalone",
+  "background_color": "#f7f5ee",
+  "theme_color": "#17231f",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/shram-sangam/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
