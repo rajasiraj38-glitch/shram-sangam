@@ -13,6 +13,8 @@ node_modules/
 .next/
 out/
 dist/
+apps/mobile/dist-android/
+apps/mobile/apps/
 build/
 
 # Python
