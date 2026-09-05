@@ -16,6 +16,9 @@ const NAV_ITEMS = [
 export function Navbar() {
   const pathname = usePathname();
 
+  // The sign-in view is intentionally distraction-free.
+  if (pathname === "/login") return null;
+
   return (
     <>
       {/* Top bar */}

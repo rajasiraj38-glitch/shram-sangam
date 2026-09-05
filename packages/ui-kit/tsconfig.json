@@ -4,5 +4,15 @@
     "jsx": "react-jsx",
     "noEmit": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "src/components/Button.tsx",
+    "src/components/Badge.tsx",
+    "src/components/Card.tsx",
+    "src/components/Input.tsx",
+    "src/components/Toast.tsx",
+    "src/components/QuorumGauge.tsx",
+    "src/components/StatBox.tsx",
+    "src/components/FeeBreakdownCard.tsx"
+  ]
 }

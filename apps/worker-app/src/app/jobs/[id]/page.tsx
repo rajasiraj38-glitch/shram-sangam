@@ -214,7 +214,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
                   loading={checkinWorking}
                   onClick={handleCheckin}
                 >
-                  <Shield className="h-4 w-4" /> I'm Safe (Check-in)
+                  <Shield className="h-4 w-4" /> I&apos;m Safe (Check-in)
                 </Button>
                 <Button
                   variant="danger"

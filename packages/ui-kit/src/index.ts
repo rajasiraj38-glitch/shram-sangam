@@ -10,16 +10,11 @@ export type { BadgeProps, BadgeVariant } from './components/badge';
 export { Card, CardHeader, CardTitle, CardDescription } from './components/card';
 export type { CardProps } from './components/card';
 
-export { FeeBreakdown } from './components/fee-breakdown';
-export type { FeeBreakdownProps } from './components/fee-breakdown';
+export { FeeBreakdown, FeeBreakdownCard } from './components/fee-breakdown';
+export type { FeeBreakdownProps, FeeBreakdownCardProps } from './components/fee-breakdown';
 
-export { FeeBreakdownCard } from './components/FeeBreakdownCard';
-export type { FeeBreakdownCardProps } from './components/FeeBreakdownCard';
-
-export { StatBox } from './components/stat-box';
+export { StatBox, CoopPoolCard } from './components/stat-box';
 export type { StatBoxProps } from './components/stat-box';
-
-export { CoopPoolCard } from './components/StatBox';
 
 export { Input, Textarea } from './components/input';
 export type { InputProps, TextareaProps } from './components/input';

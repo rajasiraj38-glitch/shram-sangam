@@ -78,3 +78,36 @@ export function StatBox({
     </div>
   );
 }
+
+// ─── Cooperative Pool Card (specialized StatBox) ──────────────────────────────
+
+export function CoopPoolCard({
+  title,
+  balance,
+  subtitle,
+  className,
+}: {
+  title: string;
+  balance: number;
+  subtitle?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl border border-lime-200 bg-gradient-to-br from-lime-50 to-teal-50 p-4 shadow-card",
+        className
+      )}
+    >
+      <p className="text-xs font-semibold text-teal-700 uppercase tracking-wide">
+        {title}
+      </p>
+      <p className="text-3xl font-bold text-teal-800 mt-1 tabular-nums">
+        ₹{balance.toLocaleString("en-IN", { minimumFractionDigits: 2 })}
+      </p>
+      {subtitle && (
+        <p className="text-xs text-teal-600 mt-1">{subtitle}</p>
+      )}
+    </div>
+  );
+}
