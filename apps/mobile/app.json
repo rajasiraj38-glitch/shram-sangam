@@ -6,10 +6,12 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "scheme": "shramsangam",
+    "icon": "./assets/shram-sangam-logo.jpeg",
     "android": {
       "package": "com.shramsangam.app",
       "adaptiveIcon": {
-        "backgroundColor": "#17231f"
+        "foregroundImage": "./assets/shram-sangam-logo.jpeg",
+        "backgroundColor": "#0F172A"
       }
     },
     "ios": {
